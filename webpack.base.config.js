@@ -4,8 +4,25 @@ const webpack = require('webpack');
 const ROOT_PATH = path.resolve(__dirname);
 const SRC_PATH = path.resolve(ROOT_PATH, 'src');
 const BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 module.exports = {
+    devServer: {
+        watchOptions: {
+            aggregateTimeout: 300,
+            poll: 1000
+
+        },
+        port: '8088', //设置端口号
+        proxy: {
+            '/index': {
+                target: 'https://www.baidu.com',
+                secure: false
+            }
+        }
+
+    } ,
     entry: {
         index: path.resolve(SRC_PATH, 'index.jsx')
     },

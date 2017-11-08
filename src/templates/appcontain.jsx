@@ -7,6 +7,7 @@ import Appindex3 from '../templates/contentc';
 import Appindex4 from '../templates/contentd';
 import Appindex from '../templates/content';
 import 'antd/dist/antd.css';
+
 class Appcontain extends React.Component {
   
   render () {
